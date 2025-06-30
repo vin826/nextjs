@@ -1,6 +1,9 @@
 import { tournaments } from '../../../data/tournaments';
+import { TournamentPageProps } from '../../../data/types';
 
-export default function TournamentPage({ params }) {
+export default function TournamentPage({ params }: TournamentPageProps) {
+
+
   const tournament = tournaments.find((t) => t.slug === params.slug);
 
   if (!tournament) return <div>Not found</div>;

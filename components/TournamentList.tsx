@@ -2,6 +2,7 @@
 
 import { tournaments } from '../data/tournaments';
 import { TournamentCard } from './TournamentCard';
+import { Tournament } from '../data/types';
 
 export function TournamentList() {
   return (

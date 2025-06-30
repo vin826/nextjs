@@ -6,7 +6,7 @@ import { Tournament } from '../data/types';
 
 
 
-export function TournamentCard({ tournament: { tournament: Tournament } }) {
+export function TournamentCard({ tournament}: { tournament: Tournament } ) {
   return (
     <Link href={`/tournaments/${tournament.slug}`}>
       <motion.div
