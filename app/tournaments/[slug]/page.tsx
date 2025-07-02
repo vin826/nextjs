@@ -1,9 +1,17 @@
-import { tournaments } from '../../../data/tournaments';
-import { TournamentPageProps } from '../../../data/types';
+import { tournaments } from '@/data/tournaments';
 
-export default function TournamentPage({ params }: TournamentPageProps) {
+// This function tells Next.js which paths to pre-render
+export async function generateStaticParams() {
+  return tournaments.map((tournament) => ({
+    slug: tournament.slug,
+  }));
+}
 
-
+// Use Next.js's built-in types
+export default async function TournamentPage(props: {
+  params: { slug: string };
+}) {
+  const { params } = await props; // Await props to get params
   const tournament = tournaments.find((t) => t.slug === params.slug);
 
   if (!tournament) return <div>Not found</div>;
