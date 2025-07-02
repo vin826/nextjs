@@ -11,10 +11,5 @@ export interface TournamentListProps {
 export interface TournamentCardProps {
   tournament: Tournament;
 }
-export interface TournamentPageProps {
-  params: {
-    slug: string;
-  };
-}
 
 
